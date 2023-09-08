@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { auth } from '@lib/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import Image from 'next/image'
+import Link from 'next/link'
 const Details = () => {
   const [user, loading] = useAuthState(auth)
 
@@ -14,6 +15,18 @@ const Details = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+
+    const Regex = /^[1-9][0-9]$/
+    const Regex2 = /^[0-9]{10}$/
+    if (!Regex.test(age)) {
+      setError('Age is invalid')
+      return
+    }
+
+    if (!Regex2.test(phoneNumber)) {
+      setError('Phone no. is invalid')
+      return
+    }
 
     try {
       await db.collection('').add({
@@ -34,21 +47,6 @@ const Details = () => {
   return (
     <div className="flex items-center justify-center pt-24">
       <form className="glassmorphism" onSubmit={handleSubmit}>
-        {user && (
-          <div className="flex items-center justify-center rounded-full">
-            <a href="/userDetails">
-              <div>
-                <Image
-                  src={user.photoURL}
-                  alt="User photo"
-                  height={40}
-                  width={40}
-                  className="rounded-full"
-                />
-              </div>
-            </a>
-          </div>
-        )}
         <div class="mb-6">
           <label
             for="email"
@@ -78,6 +76,7 @@ const Details = () => {
             placeholder="18"
             class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:shadow-sm-light dark:focus:border-blue-500 dark:focus:ring-blue-500"
             required
+            value={age}
             onChange={(event) => setAge(event.target.value)}
           />
         </div>
@@ -90,10 +89,12 @@ const Details = () => {
           </label>
           <input
             type="text"
-            id="phone"
+            id="phoneNumber"
             class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:shadow-sm-light dark:focus:border-blue-500 dark:focus:ring-blue-500"
             required
             placeholder="7021022888"
+            value={phoneNumber}
+            onChange={(event) => setPhoneNumber(event.target.value)}
           />
         </div>
         <div class="mb-6 flex items-start">
@@ -112,12 +113,12 @@ const Details = () => {
             class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
           >
             I agree with the{' '}
-            <a
+            <Link
               href="#"
               class="text-blue-600 hover:underline dark:text-blue-500"
             >
               terms and conditions
-            </a>
+            </Link>
           </label>
         </div>
         {error && <p>{error}</p>}

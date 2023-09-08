@@ -177,7 +177,9 @@ export default function Navbar() {
                       <a href="/userDetails">
                         <div>
                           <Image
-                            src={user.photoURL}
+                            src={
+                              user.photoURL ? user.photoURL : '/assets/user.png'
+                            }
                             alt="User photo"
                             height={40}
                             width={40}
