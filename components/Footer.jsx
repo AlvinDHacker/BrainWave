@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <a href="#" className="flex items-center">
-                <img src="#" className="h-8 mr-3" alt="BrainWave Logo" />
+                <img src="img/BrainWave.png" className="h-8 mr-3" alt="BrainWave Logo" />
                 <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                   BrainWave
                 </span>

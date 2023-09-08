@@ -23,7 +23,7 @@ export default function Navbar() {
           <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
             <Link href="#" className="flex items-center">
               <img
-                src="img/logo.png"
+                src="img/BrainWave.png"
                 className="mr-3 h-8"
                 alt="BrainWave Logo"
               />
@@ -71,7 +71,7 @@ export default function Navbar() {
                     <li className="mb-5">
                       <Link href="#" className="flex items-center">
                         <img
-                          src="img/logo.png"
+                          src="img/BrainWave.png"
                           className="mr-3 h-8"
                           alt="BrainWave Logo"
                         />

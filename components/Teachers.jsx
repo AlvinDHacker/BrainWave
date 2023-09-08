@@ -3,25 +3,25 @@ import React from "react";
 const Teachers = () => {
   const data = [
     {
-      timg: "img/Map.jpeg",
+      timg: "img/BrainWave.png",
       tname: "Alvin Dsouza",
       tsubj: "Frontend",
       tcour: "#",
     },
     {
-        timg: "img/Map.jpeg",
+        timg: "img/BrainWave.png",
         tname: "Alvin Dsouza",
         tsubj: "Frontend",
         tcour: "#",
       },
       {
-        timg: "img/Map.jpeg",
+        timg: "img/BrainWave.png",
         tname: "Alvin Dsouza",
         tsubj: "Frontend",
         tcour: "#",
       },
       {
-        timg: "img/Map.jpeg",
+        timg: "img/BrainWave.png",
         tname: "Alvin Dsouza",
         tsubj: "Frontend",
         tcour: "#",
