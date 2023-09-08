@@ -23,10 +23,15 @@ const Login = () => {
     }
 
     try {
-      await signInWithEmailAndPassword(auth, email, password)
-      router.push('/')
+      await signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        // ...
+      })
+    
+      router.push('/userDetails')
     } catch (err) {
-      setError('Failed to Authenticate')
+      setError(err.message)
     }
   }
 
