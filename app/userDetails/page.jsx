@@ -2,8 +2,8 @@
 import { db } from '@lib/firebase'
 import { useState } from 'react'
 import { auth } from '@lib/firebase'
-import { getAuth } from 'firebase/auth'
-import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import Image from 'next/image'
 const Details = () => {
   const [user, loading] = useAuthState(auth)
 
@@ -16,7 +16,7 @@ const Details = () => {
     event.preventDefault()
 
     try {
-      await db.collection('users').add({
+      await db.collection('').add({
         name,
         age,
         phoneNumber,
@@ -34,7 +34,21 @@ const Details = () => {
   return (
     <div className="flex items-center justify-center pt-24">
       <form className="glassmorphism" onSubmit={handleSubmit}>
-        <p> Welcome {user.displayName}</p>
+        {user && (
+          <div className="flex items-center justify-center rounded-full">
+            <a href="/userDetails">
+              <div>
+                <Image
+                  src={user.photoURL}
+                  alt="User photo"
+                  height={40}
+                  width={40}
+                  className="rounded-full"
+                />
+              </div>
+            </a>
+          </div>
+        )}
         <div class="mb-6">
           <label
             for="email"

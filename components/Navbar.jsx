@@ -4,38 +4,12 @@ import { useEffect, useLayoutEffect, useState } from 'react'
 import { Home, GraduationCap, GalleryVerticalEnd, User2 } from 'lucide-react'
 import { auth } from '../lib/firebase'
 import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth'
-
-// import { useRouter } from "next/router"
+import Image from 'next/image'
 import Link from 'next/link'
-// import { onAuthStateChanged } from "firebase/auth"
-
-// const auth = getAuth(app)
 
 export default function Navbar() {
-  // const router = useRouter()
-  // const [isAuth, setIsAuth] = useState(false)
   const [user, loading, error] = useAuthState(auth)
   const [signInWithGoogle] = useSignInWithGoogle(auth)
-  // useEffect(() => {
-  //     const unsubscribe = onAuthStateChanged(auth, (user) => {
-  //         if (user) {
-  //             setIsAuth(true);
-  //         } else {
-  //             setIsAuth(false);
-  //         }
-  //     });
-
-  //     return () => unsubscribe();
-  // });
-
-  // const handleLogout = () => {
-  //     signOut(auth).then(() => { window.location.replace('/') })
-  // }
-
-  // const handleLogin = () => {
-  //     window.location.replace('/login')
-  // }
-
   const [nav, setNav] = useState(false)
 
   const handleNav = () => {
@@ -195,6 +169,23 @@ export default function Navbar() {
                     >
                       Login
                     </button>
+                  )}
+                </li>
+                <li>
+                  {user && (
+                    <div className="flex items-center justify-center rounded-full">
+                      <a href="/userDetails">
+                        <div>
+                          <Image
+                            src={user.photoURL}
+                            alt="User photo"
+                            height={40}
+                            width={40}
+                            className="rounded-full"
+                          />
+                        </div>
+                      </a>
+                    </div>
                   )}
                 </li>
               </ul>
