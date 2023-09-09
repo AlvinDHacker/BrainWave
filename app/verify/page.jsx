@@ -46,8 +46,8 @@ const Verify = () => {
   }
 
   return (
-    <div className="flex h-screen flex-col items-center  bg-gray-100">
-      <Image src="/email.png" alt="Email" width={200} height={200} />
+    <div className="flex h-screen flex-col items-center  bg-gray-100 pt-10">
+      <Image src="/assets/email.png" alt="Email" width={200} height={200} />
       <h1 className="mt-8 text-3xl font-bold text-gray-900">
         {isSent ? 'Verification email sent' : 'Send verification email'}
       </h1>

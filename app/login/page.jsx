@@ -23,12 +23,14 @@ const Login = () => {
     }
 
     try {
-      await signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        // ...
-      })
-    
+      await signInWithEmailAndPassword(auth, email, password).then(
+        (userCredential) => {
+          // Signed in
+          const user = userCredential.user
+          // ...
+        }
+      )
+
       router.push('/userDetails')
     } catch (err) {
       setError(err.message)
@@ -36,7 +38,7 @@ const Login = () => {
   }
 
   return (
-    <section className="pt-30 flex-center w-full max-w-full flex-col">
+    <section className="pt-30 flex-center w-full max-w-full flex-col pb-96">
       <form
         onSubmit={handleSubmit}
         className="glassmorphism mt-10 flex w-full max-w-2xl flex-col gap-7"

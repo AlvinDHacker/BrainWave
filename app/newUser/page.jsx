@@ -36,7 +36,7 @@ const ResetPassword = () => {
   }
 
   return (
-    <section className="pt-30 flex-center w-full max-w-full flex-col">
+    <section className="pt-30 flex-center w-full max-w-full flex-col pb-64">
       <form
         onSubmit={handleSubmit}
         className="glassmorphism mt-10 flex w-full max-w-2xl flex-col gap-7"

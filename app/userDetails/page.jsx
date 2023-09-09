@@ -45,7 +45,7 @@ const Details = () => {
   }
 
   return (
-    <div className="flex items-center justify-center pt-24">
+    <div className="flex items-center justify-center pb-48 pt-20">
       <form className="glassmorphism" onSubmit={handleSubmit}>
         <div class="mb-6">
           <label
