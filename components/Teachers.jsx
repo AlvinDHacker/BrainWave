@@ -3,27 +3,27 @@ import React from "react";
 const Teachers = () => {
   const data = [
     {
-      timg: "img/BrainWave.png",
-      tname: "Alvin Dsouza",
-      tsubj: "Frontend",
+      timg: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png",
+      tname: "Joseph McFall",
+      tsubj: "Frontend & UI Developer",
       tcour: "#",
     },
     {
-        timg: "img/BrainWave.png",
-        tname: "Alvin Dsouza",
-        tsubj: "Frontend",
+        timg: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png",
+        tname: "Jese Leos",
+        tsubj: "Backend Developer at Google",
         tcour: "#",
       },
       {
-        timg: "img/BrainWave.png",
-        tname: "Alvin Dsouza",
-        tsubj: "Frontend",
+        timg: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png",
+        tname: "Roberta Casas",
+        tsubj: "AI ML Developer at Amazon",
         tcour: "#",
       },
       {
-        timg: "img/BrainWave.png",
-        tname: "Alvin Dsouza",
-        tsubj: "Frontend",
+        timg: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png",
+        tname: "Karen Nelson",
+        tsubj: "Design Head at Microsoft",
         tcour: "#",
       },
   ];

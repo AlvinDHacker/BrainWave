@@ -20,7 +20,7 @@ export default function Navbar() {
     <>
       <div className="dark w-full" style={{ zIndex: '5' }}>
         <nav className="sticky top-0 border-gray-200 bg-white dark:bg-gray-900">
-          <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
+          <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-3">
             <Link href="#" className="flex items-center">
               <img
                 src="img/BrainWave.png"
@@ -62,7 +62,7 @@ export default function Navbar() {
               // <!-- drawer component -->
               <div
                 //   id="drawer-navigation"
-                className="fixed left-0 top-0 z-40 h-screen w-64 overflow-y-auto bg-white p-4 transition-transform dark:bg-gray-800"
+                className="fixed left-0 top-0 z-40 h-screen w-64 overflow-y-auto bg-white p-3 transition-transform dark:bg-gray-800"
                 style={{ zIndex: '5' }}
                 // tabindex="-1"
               >
