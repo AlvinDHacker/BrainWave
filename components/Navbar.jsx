@@ -162,13 +162,25 @@ export default function Navbar() {
                       Logout
                     </button>
                   ) : (
-                    <button
-                      type="button"
-                      className="mr-3 rounded-lg bg-blue-700 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:mr-0"
-                      onClick={() => signInWithGoogle()}
-                    >
-                      Login
-                    </button>
+                    <div className="flex flex-row items-center justify-center">
+                      <div>
+                        <button
+                          type="button"
+                          className="mr-3 rounded-lg bg-blue-700 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:mr-0"
+                          onClick={() => signInWithGoogle()}
+                        >
+                          Login with Google
+                        </button>
+                      </div>
+                      <div className="pl-4">
+                        <Link
+                          className="mr-3 rounded-lg bg-blue-700 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:mr-0"
+                          href="/login"
+                        >
+                          Login with email
+                        </Link>
+                      </div>
+                    </div>
                   )}
                 </li>
                 <li>
