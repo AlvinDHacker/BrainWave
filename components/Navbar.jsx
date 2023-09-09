@@ -203,8 +203,8 @@ export default function Navbar() {
                           <Image
                             src={
                               user.emailVerified
-                                ? '/assets/BrainWave.png'
-                                : '/assets/user.png'
+                                ? '/assets/user.png'
+                                : '/assets/BrainWave.png'
                             }
                             alt="User photo"
                             height={40}

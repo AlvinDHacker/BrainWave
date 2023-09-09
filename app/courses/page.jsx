@@ -7,8 +7,7 @@ export default function Course() {
   return (
     <>
       <Navbar />
-      <CourseSep/>
-      <Questions/>
+      <CourseSep />
       <Footer />
     </>
   )
