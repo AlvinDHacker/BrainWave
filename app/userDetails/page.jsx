@@ -5,6 +5,17 @@ import { auth } from '@lib/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import Image from 'next/image'
 import Link from 'next/link'
+import {
+  getDocs,
+  getDoc,
+  doc,
+  setDoc,
+  deleteDoc,
+  query,
+  updateDoc,
+  collection,
+} from 'firebase/firestore'
+
 const Details = () => {
   const [user, loading] = useAuthState(auth)
 
@@ -29,11 +40,12 @@ const Details = () => {
     }
 
     try {
-      await db.collection('').add({
-        name,
-        age,
-        phoneNumber,
-      })
+      const userRef = doc(db, 'users', user.uid)
+      await setDoc(
+        userRef,
+        { userName: name, Age: age, phoneNumber: phoneNumber },
+        { merge: true }
+      )
       // Reset form fields
       setName('')
       setAge('')

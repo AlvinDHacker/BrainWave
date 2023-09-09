@@ -154,13 +154,25 @@ export default function Navbar() {
                 </li>
                 <li>
                   {user ? (
-                    <button
-                      type="button"
-                      className="mr-3 rounded-lg bg-blue-700 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:mr-0"
-                      onClick={() => auth.signOut()}
-                    >
-                      Logout
-                    </button>
+                    <div className="flex flex-row ">
+                      {' '}
+                      <div className="pr-5">
+                        {' '}
+                        <button
+                          type="button"
+                          className="mr-3 rounded-lg bg-blue-700 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:mr-0"
+                          onClick={() => auth.signOut()}
+                        >
+                          Logout
+                        </button>
+                      </div>
+                      <Link
+                        className="mr-3 rounded-lg bg-blue-700 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:mr-0 "
+                        href="/userDetails"
+                      >
+                        User details
+                      </Link>
+                    </div>
                   ) : (
                     <div className="flex flex-row items-center justify-center">
                       <div>
