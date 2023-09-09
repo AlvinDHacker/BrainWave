@@ -178,7 +178,9 @@ export default function Navbar() {
                         <div>
                           <Image
                             src={
-                              user.photoURL ? user.photoURL : '/assets/user.png'
+                              user.emailVerified
+                                ? '/assets/BrainWave.png'
+                                : '/assets/user.png'
                             }
                             alt="User photo"
                             height={40}
